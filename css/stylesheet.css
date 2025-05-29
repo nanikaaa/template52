@@ -30,7 +30,6 @@
 }
 
 /* === Language === */
-
 .lang-switch {
   cursor: pointer;
   font-family: "Zen Old Mincho", serif;
@@ -237,7 +236,7 @@
 .concept-image-right .bottom-img {
   width: 50%;
   margin-top: -200px;
-  margin-left: 330px;
+  margin-left: 350px;
 }
 
 .concept-content {
@@ -264,7 +263,7 @@
   left: 5px;
   font-size: 2rem;
   letter-spacing: 5px;
-  color: rgb(255 255 255 / 52%);
+  color: whitesmoke;
   pointer-events: none;
   z-index: 0;
 }
@@ -320,11 +319,26 @@
 }
 
 .menu-section {
+  position: relative;
   background: url("../img/home-menu-bg.jpg") no-repeat center center / cover;
   padding: 5rem;
   font-family: "Zen Old Mincho", serif;
   color: #1e1e1e;
   text-align: center;
+  overflow: hidden;
+}
+
+.menu-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.menu-section > * {
+  position: relative;
+  z-index: 2;
 }
 
 .menu-row {
@@ -359,6 +373,7 @@
 .menu-text p {
   letter-spacing: 3px;
   line-height: 2;
+  text-align: justify;
 }
 
 .menu-text.left {
@@ -369,6 +384,45 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: bold;
+}
+
+.access-section {
+  background-color: #d9d9d9;
+  padding: 5rem;
+  font-family: "Zen Old Mincho", serif;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.section-jp {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.access-info .info-left,
+.access-info .info-right {
+  text-align: left;
+}
+
+.map-wrapper {
+  max-width: 100%;
+  margin: 0 auto 3rem;
+}
+
+.access-info {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 3px;
+}
+
+.access-info .info-left,
+.access-info .info-right {
+  text-align: left;
 }
 
 /* === FOOTER === */
