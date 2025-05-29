@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@900&display=swap");
+
+/* HEADER */
+.site-header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+}
+
+.re-nav-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.re-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.re-nav-logo {
+  font-family: "Zen Old Mincho", serif;
+  font-weight: 900;
+  font-size: 2.25rem;
+  color: #1e1e1e;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* === Language === */
+
+.lang-switch {
+  cursor: pointer;
+  font-family: "Zen Old Mincho", serif;
+  font-size: 1rem;
+  color: #444;
+  user-select: none;
+}
+
+.lang-switch span {
+  font-weight: normal;
+  cursor: pointer;
+  transition: font-weight 0.2s ease;
+}
+
+.lang-switch .active {
+  font-weight: bold;
+}
+
+.lang-switch .lang-jp {
+  font-weight: bold;
+}
+
+.lang-switch .lang-divider {
+  margin: 0 4px;
+}
+
+.lang-switch .highlight {
+  animation: fadeText 0.5s ease-in-out;
+}
+
+@keyframes fadeText {
+  0% {
+    color: #000;
+  }
+  100% {
+    color: inherit;
+  }
+}
+
+/* === Menu === */
+.mobile-nav {
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+#menu-toggle:checked + .menu-icon .top-bar {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked + .menu-icon .middle-bar {
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-icon .bottom-bar {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-nav-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 50%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#menu-toggle:checked ~ .mobile-nav-panel {
+  right: 0;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobile-nav-links li {
+  margin: 1.2rem 0;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-family: "Zen Old Mincho", serif;
+  transition: transform 0.2s ease;
+}
+
+.mobile-nav-links a:hover {
+  transform: scale(1.2);
+}
+
+.mobile-nav-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.mobile-nav-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.mobile-nav-icons a:hover img {
+  transform: scale(1.2);
+}
+
+/* === INDEX === */
+/* === MV === */
+.mv-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mv-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* === Index Sections === */
+.concept-section {
+  background-color: #d9d9d9;
+  padding: 5rem;
+  font-family: "Zen Old Mincho", serif;
+}
+
+.concept-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.concept-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.concept-image-left {
+  flex: 1 1 25%;
+}
+
+.concept-image-right {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+.concept-image-right img {
+  display: block;
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
+.concept-image-right .bottom-img {
+  width: 50%;
+  margin-top: -200px;
+  margin-left: 330px;
+}
+
+.concept-content {
+  flex: 1 1 20%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.concept-title {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: "Zen Old Mincho", serif;
+}
+
+.concept-bg {
+  position: absolute;
+  top: -15px;
+  left: 5px;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: rgb(255 255 255 / 52%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.concept-jp {
+  position: relative;
+  font-size: 2rem;
+  letter-spacing: 6px;
+  color: #1e1e1e;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.concept-content p {
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 2;
+  letter-spacing: 3px;
+  color: #333;
+}
+
+.concept-btn {
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  padding-left: 2rem;
+  transition: all 0.4s ease;
+  font-family: "Zen Old Mincho", serif;
+  overflow: hidden;
+}
+
+.concept-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 1px;
+  background-color: #000;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.concept-btn:hover {
+  padding-left: 2.5rem;
+}
+
+.concept-btn:hover::before {
+  transform: translate(200%, -50%);
+  opacity: 0;
+}
+
+.menu-section {
+  background: url("../img/home-menu-bg.jpg") no-repeat center center / cover;
+  padding: 5rem;
+  font-family: "Zen Old Mincho", serif;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.menu-images {
+  display: flex;
+  flex: 1 1 60%;
+}
+
+.menu-images img {
+  width: 100%;
+  max-width: 33.33%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-text {
+  flex: 1 1 35%;
+  font-size: 1rem;
+  line-height: 2;
+  text-align: center;
+}
+
+.menu-text p {
+  letter-spacing: 3px;
+  line-height: 2;
+}
+
+.menu-text.left {
+  order: -1;
+}
+
+.section-sub {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* === FOOTER === */
+/* --------------------------
+   Footer Contact Section
+--------------------------- */
+.footer-contact {
+  position: relative;
+  max-width: 100%;
+  background: url("../img/contact-bg.png") no-repeat center center / cover;
+  color: #e8e8e8;
+  padding: 4rem 15rem;
+  font-family: "Zen Old Mincho", serif;
+  overflow: hidden;
+}
+
+.footer-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(57, 57, 57, 0.541);
+  z-index: 1;
+}
+
+.footer-contact-content {
+  max-width: 1920px;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-contact-text h2 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact-text p {
+  font-size: 1.5rem;
+  max-width: 100%;
+  line-height: 1.6;
+}
+
+.footer-contact-button .contact-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-button .contact-arrow:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.site-footer {
+  background-color: #e8e8e8;
+  padding: 2rem 4rem 1rem 4rem;
+  font-family: "Zen Old Mincho", serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1920px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-right .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #555;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #555;
+}
